@@ -7,8 +7,8 @@ import * as React from 'react'
 
 // 🐨 use React.lazy to create a Globe component which uses a dynamic import
 // to get the Globe component from the '../globe' module.
-const Globe = React.lazy(() => import('../globe'))
-
+const loadGlobe = () => import('../globe')
+const Globe = React.lazy(loadGlobe)
 
 function App() {
   const [showGlobe, setShowGlobe] = React.useState(false)
@@ -33,6 +33,8 @@ function App() {
           type="checkbox"
           checked={showGlobe}
           onChange={e => setShowGlobe(e.target.checked)}
+          onMouseOver={loadGlobe}
+          onFocus={loadGlobe}
         />
         {' show globe'}
       </label>
