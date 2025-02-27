@@ -2,8 +2,8 @@ import * as React from 'react'
 import {alfredTip} from '@kentcdodds/react-workshop-app/test-utils'
 import {render, screen, fireEvent} from '@testing-library/react'
 import {getItems} from '../filter-cities'
-import App from '../final/02'
-// import App from '../exercise/02'
+// import App from '../final/02'
+import App from '../exercise/02'
 
 jest.mock('../filter-cities')
 
@@ -31,7 +31,7 @@ test('useMemo is called properly', async () => {
 
   alfredTip(
     () => expect(container.querySelectorAll('li')).toHaveLength(0),
-    `There are search results when there shouldn't be. Make sure to pass the inputValue into the dependecy array of the useMemo call. If you're doing that correctly, then make sure that you're calling the getItems function correctly.`,
+    `There are search results when there shouldn't be. Make sure to pass the inputValue into the dependency array of the useMemo call. If you're doing that correctly, then make sure that you're calling the getItems function correctly.`,
   )
   expect(getItems).toHaveBeenCalledWith(filter)
   alfredTip(
