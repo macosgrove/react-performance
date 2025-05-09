@@ -18,7 +18,7 @@ function reportProfile(
   commitTime, // when React committed this update
   interactions, // the Set of interactions belonging to this update
 ) {
-  queue.push({
+  let profile = {
     id,
     phase,
     actualDuration,
@@ -26,7 +26,8 @@ function reportProfile(
     startTime,
     commitTime,
     interactions,
-  })
+  }
+  queue.push(profile)
   // this is a fire and forget, so we don't return anything.
 }
 
